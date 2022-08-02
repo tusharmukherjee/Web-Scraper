@@ -6,7 +6,7 @@ console.log("-------------------------------------------------");
 
     function writeExcel(data,name){
         let workbook = xlsx.utils.book_new();
-        name = "April22"
+        name = "Modinagar_Zomato"
         data = JSON.parse(buffer);
         let worksheet = xlsx.utils.json_to_sheet(data);
         xlsx.utils.book_append_sheet(workbook, worksheet, "Sheet1");

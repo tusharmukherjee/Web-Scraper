@@ -31,7 +31,7 @@ function dircreator(filePath){
 dircreator(restMain);
 
 
-let xlFilePath = path.join('delet.xlsx');
+let xlFilePath = path.join('Modinagar_Zomato.xlsx');
 let restJson = readExcel(xlFilePath,'Sheet1');
 
 
@@ -65,8 +65,10 @@ let restJson = readExcel(xlFilePath,'Sheet1');
             price = await page.evaluate(() => Array.from(document.querySelectorAll('span.sc-17hyc2s-1.cCiQWA')).map((priceOn) => priceOn.innerText));
 
             for(let m = 0; m < dishesLength; m++){
+                if(vote[m] != undefined){
                 let voteNum = parseInt(vote[m].replace(/\D/g,''));
                 voteMain.push(voteNum);
+                }
                 let priceNum = parseInt(price[m].replace(/\D/g,''));
                 priceMain.push(priceNum);
             }
