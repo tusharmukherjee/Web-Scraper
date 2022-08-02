@@ -3,10 +3,11 @@ const fs = require("fs");
 // let buffer = fs.readFileSync('./newZomData2.json');
 // let zomData = JSON.parse(buffer);
 let baseUrl = "https://www.zomato.com";
+const writeExcell = require("./toExcel");
 
 // zomData
 (async () => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   await page.setUserAgent(
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36"
@@ -44,6 +45,7 @@ let baseUrl = "https://www.zomato.com";
   });
 
   console.log(wholeData);
+  writeExcell(wholeData, "venturesData");
   fs.writeFileSync("./newZomData2.json", JSON.stringify(wholeData));
 
   await page.screenshot({ path: "example.png" });
