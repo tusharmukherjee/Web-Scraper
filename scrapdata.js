@@ -12,7 +12,7 @@ const writeExcell = require("./toExcel");
   await page.setUserAgent(
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36"
   );
-  await page.goto("https://zomato.com/meerut/restaurants?category=1");
+  await page.goto("https://www.zomato.com/chennai/potheri-restaurants?category=1&delivery_subzone=1884&place_name=Kattankulathur%2C++GST+Road%2C++India");
 
   await page.evaluate(() => window.scrollBy(0, 5000));
   await page.waitForTimeout(90000);
@@ -24,29 +24,44 @@ const writeExcell = require("./toExcel");
       )
     ).map((partner) => {
       const splitArr = partner.innerText.split("\n");
-      const ventureName = splitArr[0];
+      const link = partner.href;
+      const newarr = splitArr.filter((blank) => blank != "");
+      const ventureName = newarr[0];
+      const rating = newarr[1];
+      const categories = newarr[2].split(",");
       let numberOfOrders;
       if (
-        splitArr[splitArr.length - 1].search(
+        newarr[newarr.length - 1].search(
           "orders placed from here recently"
         ) !== -1
       ) {
         numberOfOrders = parseInt(
-          splitArr[splitArr.length - 1].replace(/\D/g, "")
+          newarr[newarr.length - 1].replace(/\D/g, "")
         );
       } else {
         numberOfOrders = 0;
       }
       return {
         ventureName,
+        rating,
+        categories,
         numberOfOrders,
+        link
       };
     });
   });
 
   console.log(wholeData);
-  writeExcell(wholeData, "venturesData");
-  fs.writeFileSync("./newZomData2.json", JSON.stringify(wholeData));
+  Promise.all(wholeData.sort(function(a,b){
+    if(a.numberOfOrders > b.numberOfOrders){
+      return 1;
+    }
+    return -1;
+  }))
+  .then(
+  // writeExcell(wholeData, "venturesData");
+  fs.writeFileSync("./newZomData2.json", JSON.stringify(wholeData))
+  );
 
   await page.screenshot({ path: "example.png" });
   await browser.close();
