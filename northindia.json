@@ -1,0 +1,342 @@
+[
+    {
+        "ventureName": "Bihari Dhaba",
+        "rating": "3.8",
+        "categories": [
+            "North Indian",
+            "Mughlai",
+            "Chinese",
+            "Fast Food"
+        ],
+        "numberOfOrders": 575,
+        "link": "https://www.zomato.com/chennai/bihari-dhaba-potheri/order"
+    },
+    {
+        "ventureName": "Al Sham Barbeque Restaurant",
+        "rating": "4.1",
+        "categories": [
+            "North Indian",
+            "Chinese",
+            "Biryani",
+            "Lebanese"
+        ],
+        "numberOfOrders": 650,
+        "link": "https://www.zomato.com/chennai/al-sham-barbeque-restaurant-gst-road/order"
+    },
+    {
+        "ventureName": "Tibetan Cafe",
+        "rating": "4.3",
+        "categories": [
+            "Tibetan",
+            "Momos",
+            "Chinese"
+        ],
+        "numberOfOrders": 725,
+        "link": "https://www.zomato.com/chennai/tibetan-cafe-2-potheri/order"
+    },
+    {
+        "ventureName": "Sweet Truth - Cake and Desserts",
+        "rating": "3.8",
+        "categories": [
+            "Desserts",
+            "Bakery"
+        ],
+        "numberOfOrders": 775,
+        "link": "https://www.zomato.com/chennai/sweet-truth-cake-and-desserts-potheri/order"
+    },
+    {
+        "ventureName": "The Good Bowl",
+        "rating": "4.1",
+        "categories": [
+            "North Indian",
+            "Pasta",
+            "Italian"
+        ],
+        "numberOfOrders": 800,
+        "link": "https://www.zomato.com/chennai/the-good-bowl-potheri/order"
+    },
+    {
+        "ventureName": "Rajasthani Restaurant",
+        "rating": "3.8",
+        "categories": [
+            "Rajasthani",
+            "North Indian",
+            "Street Food",
+            "Beverages"
+        ],
+        "numberOfOrders": 825,
+        "link": "https://www.zomato.com/chennai/rajasthani-restaurant-potheri/order"
+    },
+    {
+        "ventureName": "Oh! My God",
+        "rating": "3.9",
+        "categories": [
+            "North Indian",
+            "Chinese",
+            "Biryani",
+            "Juices",
+            "Beverages",
+            "Shake",
+            "Sichuan"
+        ],
+        "numberOfOrders": 850,
+        "link": "https://www.zomato.com/chennai/oh-my-god-kanchipuram-district/order"
+    },
+    {
+        "ventureName": "HR05 Food Plaza",
+        "rating": "4.2",
+        "categories": [
+            "North Indian",
+            "Fast Food"
+        ],
+        "numberOfOrders": 875,
+        "link": "https://www.zomato.com/chennai/hr05-food-plaza-potheri/order"
+    },
+    {
+        "ventureName": "Sri Aarya Bhavan",
+        "rating": "4.1",
+        "categories": [
+            "South Indian",
+            "Chinese",
+            "Sichuan"
+        ],
+        "numberOfOrders": 950,
+        "link": "https://www.zomato.com/chennai/sri-aarya-bhavan-gst-road/order"
+    },
+    {
+        "ventureName": "Chicken N Kitchen",
+        "rating": "3.3",
+        "categories": [
+            "Biryani",
+            "Chinese"
+        ],
+        "numberOfOrders": 1050,
+        "link": "https://www.zomato.com/chennai/chicken-n-kitchen-potheri/order"
+    },
+    {
+        "ventureName": "Spoons Restaurant & Cafe",
+        "rating": "3.8",
+        "categories": [
+            "Kerala",
+            "South Indian"
+        ],
+        "numberOfOrders": 1050,
+        "link": "https://www.zomato.com/chennai/spoons-restaurant-cafe-potheri/order"
+    },
+    {
+        "ventureName": "Behrouz Biryani",
+        "rating": "4.0",
+        "categories": [
+            "Biryani",
+            "Kebab",
+            "Hyderabadi",
+            "Lucknowi"
+        ],
+        "numberOfOrders": 1175,
+        "link": "https://www.zomato.com/chennai/behrouz-biryani-potheri/order"
+    },
+    {
+        "ventureName": "Combo Adda",
+        "rating": "3.8",
+        "categories": [
+            "South Indian",
+            "North Indian",
+            "Chinese",
+            "Fast Food"
+        ],
+        "numberOfOrders": 1375,
+        "link": "https://www.zomato.com/chennai/combo-adda-kanchipuram-district/order"
+    },
+    {
+        "ventureName": "LunchBox - Meals and Thalis",
+        "rating": "3.9",
+        "categories": [
+            "North Indian",
+            "Chinese",
+            "Desserts"
+        ],
+        "numberOfOrders": 1400,
+        "link": "https://www.zomato.com/chennai/lunchbox-meals-and-thalis-potheri/order"
+    },
+    {
+        "ventureName": "Hot Chips",
+        "rating": "4.1",
+        "categories": [
+            "South Indian"
+        ],
+        "numberOfOrders": 1450,
+        "link": "https://www.zomato.com/chennai/hot-chips-gst-road/order"
+    },
+    {
+        "ventureName": "Golcondas",
+        "rating": "4.1",
+        "categories": [
+            "Chinese",
+            "Andhra",
+            "North Indian"
+        ],
+        "numberOfOrders": 1575,
+        "link": "https://www.zomato.com/chennai/golcondas-potheri/order"
+    },
+    {
+        "ventureName": "Faasos - Wraps & Rolls",
+        "rating": "4.1",
+        "categories": [
+            "Rolls",
+            "Wraps",
+            "Fast Food"
+        ],
+        "numberOfOrders": 1650,
+        "link": "https://www.zomato.com/chennai/faasos-wraps-rolls-potheri/order"
+    },
+    {
+        "ventureName": "Sathyam Vegetarian Restaurant",
+        "rating": "4.1",
+        "categories": [
+            "South Indian",
+            "Chinese",
+            "North Indian",
+            "Beverages"
+        ],
+        "numberOfOrders": 1750,
+        "link": "https://www.zomato.com/chennai/sathyam-vegetarian-restaurant-1-gst-road/order"
+    },
+    {
+        "ventureName": "Subway",
+        "rating": "3.7",
+        "categories": [
+            "Healthy Food",
+            "Fast Food",
+            "Sandwich",
+            "Salad",
+            "Beverages",
+            "Wraps"
+        ],
+        "numberOfOrders": 1775,
+        "link": "https://www.zomato.com/chennai/subway-potheri/order"
+    },
+    {
+        "ventureName": "Anjappar",
+        "rating": "3.6",
+        "categories": [
+            "South Indian",
+            "Beverages"
+        ],
+        "numberOfOrders": 1875,
+        "link": "https://www.zomato.com/chennai/anjappar-gst-road/order"
+    },
+    {
+        "ventureName": "Madurai Mess",
+        "rating": "4.0",
+        "categories": [
+            "Chinese",
+            "South Indian",
+            "Sichuan"
+        ],
+        "numberOfOrders": 2175,
+        "link": "https://www.zomato.com/chennai/madurai-mess-gst-road/order"
+    },
+    {
+        "ventureName": "Domino's Pizza",
+        "rating": "4.1",
+        "categories": [
+            "Pizza",
+            "Fast Food",
+            "Desserts",
+            "Beverages"
+        ],
+        "numberOfOrders": 2225,
+        "link": "https://www.zomato.com/chennai/dominos-pizza-2-kanchipuram-district/order"
+    },
+    {
+        "ventureName": "Ovenstory Pizza",
+        "rating": "4.3",
+        "categories": [
+            "Pizza",
+            "Fast Food"
+        ],
+        "numberOfOrders": 2550,
+        "link": "https://www.zomato.com/chennai/ovenstory-pizza-1-potheri/order"
+    },
+    {
+        "ventureName": "Oxygen",
+        "rating": "3.8",
+        "categories": [
+            "Biryani",
+            "North Indian",
+            "Chinese",
+            "Shake",
+            "Sichuan"
+        ],
+        "numberOfOrders": 2850,
+        "link": "https://www.zomato.com/chennai/oxygen-potheri/order"
+    },
+    {
+        "ventureName": "Loiee Mithai & Rasoi",
+        "rating": "4.0",
+        "categories": [
+            "North Indian",
+            "Chinese",
+            "Fast Food",
+            "Sichuan",
+            "Mithai",
+            "Ice Cream",
+            "Shake",
+            "Beverages"
+        ],
+        "numberOfOrders": 3650,
+        "link": "https://www.zomato.com/chennai/loiee-mithai-rasoi-potheri/order"
+    },
+    {
+        "ventureName": "Pizza Hut",
+        "rating": "3.6",
+        "categories": [
+            "Pizza",
+            "Fast Food"
+        ],
+        "numberOfOrders": 5375,
+        "link": "https://www.zomato.com/chennai/pizza-hut-potheri/order"
+    },
+    {
+        "ventureName": "Ambur Star Briyani",
+        "rating": "4.0",
+        "categories": [
+            "Biryani",
+            "Mughlai",
+            "Seafood",
+            "Chinese",
+            "North Indian"
+        ],
+        "numberOfOrders": 5875,
+        "link": "https://www.zomato.com/chennai/ambur-star-briyani-potheri/order"
+    },
+    {
+        "ventureName": "A2B - Adyar Ananda Bhavan",
+        "rating": "4.1",
+        "categories": [
+            "South Indian",
+            "Mithai",
+            "Fast Food",
+            "North Indian",
+            "Chinese",
+            "Ice Cream",
+            "Desserts",
+            "Beverages"
+        ],
+        "numberOfOrders": 6400,
+        "link": "https://www.zomato.com/chennai/a2b-adyar-ananda-bhavan-gst-road/order"
+    },
+    {
+        "ventureName": "KFC",
+        "rating": "4.0",
+        "categories": [
+            "Burger",
+            "Fast Food",
+            "Biryani",
+            "Desserts",
+            "Beverages"
+        ],
+        "numberOfOrders": 6575,
+        "link": "https://www.zomato.com/chennai/kfc-3-kanchipuram-district/order"
+    }
+]
