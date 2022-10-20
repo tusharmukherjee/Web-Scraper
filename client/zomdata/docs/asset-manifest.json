@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/zomdata/static/css/main.6568878a.css",
+    "main.js": "/zomdata/static/js/main.efa9aa3f.js",
+    "static/js/787.ee07ecbf.chunk.js": "/zomdata/static/js/787.ee07ecbf.chunk.js",
+    "service-worker.js": "/zomdata/service-worker.js",
+    "static/media/analytics.png": "/zomdata/static/media/analytics.154af2e6a76c6ccde89d.png",
+    "static/media/working.png": "/zomdata/static/media/working.0ddcb1bc89915f403afa.png",
+    "index.html": "/zomdata/index.html",
+    "main.6568878a.css.map": "/zomdata/static/css/main.6568878a.css.map",
+    "main.efa9aa3f.js.map": "/zomdata/static/js/main.efa9aa3f.js.map",
+    "787.ee07ecbf.chunk.js.map": "/zomdata/static/js/787.ee07ecbf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6568878a.css",
+    "static/js/main.efa9aa3f.js"
+  ]
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom'
 import Dashboard from './components/Dashboard';
 import Homesearch from './components/Homesearch';
 import Zomnav from './components/Zomnav';
@@ -10,7 +10,8 @@ import Test from './components/Test';
 
 function App() {
   return (
-    <Router>
+    // <Router>
+    <HashRouter>
       <Routes>
         <Route path='/' element={<Zomnav />}>
           <Route path='' element={<><Home /></>} />
@@ -20,7 +21,8 @@ function App() {
           <Route path='/test' element={<Test />} />
         </Route>
       </Routes>
-    </Router>
+    </HashRouter>
+    // </Router>
   );
 }
 
