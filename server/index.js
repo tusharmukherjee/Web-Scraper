@@ -72,12 +72,12 @@ app.post("/link",async(req,res)=>{
             };
           });
         });
-        await browser.close();
+        
         // console.log(wholeData);
         res.send({
             wholeData: wholeData
         });
-        
+        await browser.close();
       })();
 
 })
