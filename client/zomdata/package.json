@@ -1,5 +1,5 @@
 {
-  "homepage": "https://tusharmukherjee.github.io/zomdata/",
+  "homepage": "https://tusharmukherjee.github.io/Web-Scraper/",
   "name": "zomdata",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +12,7 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "chart.js": "^3.9.1",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0",
@@ -36,7 +37,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
