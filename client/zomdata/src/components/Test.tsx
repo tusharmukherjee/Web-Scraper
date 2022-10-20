@@ -1,39 +1,39 @@
-import React, { createContext, FC, useState } from 'react'
+import React from 'react'
 
-interface filterobjtype {
-    rateorder: string,
-    ordersorder: string,
-    ratebox: string,
-    cuisine: any,
-    splitarr: string
-}
+const Test = () => {
+    let mapp = new Map();
 
-interface ParentCompProps {
-    children?: React.ReactNode;
-}
+    const objsize = JSON.parse(localStorage.getItem('gurugram') as any).length;
+    const myarr = JSON.parse(localStorage.getItem('gurugram') as any);
 
-export const Head = createContext<any>({});
+    let temp = myarr.map((el: any) => el.categories.map((la: any) => la.trim()));
 
-const Context: FC<ParentCompProps> = ({ children }) => {
-    const [toggleFilterbox, setToggleFilterbox] = useState<boolean>(false);
-    // const [myarr, setmyarr] = useState<any>([]);
-    const [filterobj, setfilterobj] = useState<filterobjtype>({
-        rateorder: "rdesc",
-        ordersorder: "odesc",
-        ratebox: "0.0",
-        cuisine: [],
-        splitarr: "none"
-    });
+    for (var n of cuisine) {
+        let value = 0;
+        for (let i = 0; i < objsize; i++) {
+            if (temp[i].includes(n)) {
+                mapp.set(n, ++value);
+            }
+        }
+    }
 
-
-
+    // Promise.all(
+    mapp = new Map([...mapp.entries()].sort((a, b) => b[1] - a[1]))
+    // )
+    // .then(
+    // () => {
+    for (var [key, val] of mapp) {
+        console.log(key, val);
+    }
+    // }
+    // );
 
     return (
-        <Head.Provider value={{ cuisines, toggleFilterbox, setToggleFilterbox, filterobj, setfilterobj }}>{children}</Head.Provider>
+        <div>Test</div>
     )
 }
 
-const cuisines = [
+const cuisine = [
     "Afghan",
     "African",
     "American",
@@ -137,4 +137,4 @@ const cuisines = [
     "Wraps"
 ];
 
-export default Context
+export default Test

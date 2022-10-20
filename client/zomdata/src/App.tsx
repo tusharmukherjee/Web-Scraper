@@ -5,8 +5,8 @@ import Dashboard from './components/Dashboard';
 import Homesearch from './components/Homesearch';
 import Zomnav from './components/Zomnav';
 import Presaved from './components/Presaved';
-import Showtable from './components/Showtable';
 import Home from './components/Home';
+import Test from './components/Test';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           <Route path='/search' element={<><Homesearch /></>} />
           <Route path='/dashboard/:key' element={<Dashboard />} />
           <Route path='/saved' element={<Presaved />} />
-          <Route path='/test' element={<Showtable />} />
+          <Route path='/test' element={<Test />} />
         </Route>
       </Routes>
     </Router>

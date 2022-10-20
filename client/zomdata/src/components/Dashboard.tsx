@@ -2,6 +2,7 @@ import React, { FC, useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Head } from '../Context'
 import Barchart from './Barchart'
+import Cusinechar from './Cusinechar'
 import Filter from './Filter'
 import Filterbox from './Filterbox'
 import Footer from './Footer'
@@ -21,7 +22,8 @@ interface chartData {
 
 interface filterobjtype {
     filterobj: filterobjtype2
-    setfilterobj: (x: any) => any
+    setfilterobj: (x: any) => any,
+    cuisines: [string]
 }
 
 interface filterobjtype2 {
@@ -35,7 +37,7 @@ interface filterobjtype2 {
 
 const Dashboard: FC = () => {
 
-    const { filterobj } = useContext(Head) as filterobjtype;
+    const { filterobj, cuisines } = useContext(Head) as filterobjtype;
 
     const [mydata, setmydata] = useState<any>([]);
     const [analytics, setanalytics] = useState<any>({
@@ -64,7 +66,22 @@ const Dashboard: FC = () => {
     })
 
 
-    // console.log(param);
+    const [catData, setcatData] = useState<chartData>({
+        labels: ['Chinese', 'Pizza', 'Burger'],
+        datasets: [
+            {
+                label: "Cuisine provided by no. of Food sellers",
+                data: [1, 2, 3],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                hoverOffset: 4
+            }
+        ]
+    })
+
 
     useEffect(() => {
 
@@ -204,8 +221,43 @@ const Dashboard: FC = () => {
 
                     setmydata(reso);
 
-                    console.log(reso);
-                });
+                    // console.log(reso);
+                    return reso;
+                })
+                .then((reso: any) => {
+
+                    let mapp = new Map();
+
+                    let temp = reso.map((el: any) => el.categories.map((la: any) => la.trim()));
+                    // console.log(temp);
+
+                    for (var n of cuisines) {
+                        let value = 0;
+                        for (let i = 0; i < reso.length; i++) {
+                            if (temp[i].includes(n)) {
+                                mapp.set(n, ++value);
+                            }
+                        }
+                    }
+
+                    mapp = new Map([...mapp.entries()].sort((a, b) => b[1] - a[1]));
+                    console.log(mapp);
+                    console.log(reso)
+                    setcatData({
+                        labels: [...mapp.keys()],
+                        datasets: [
+                            {
+                                label: "Cuisine sellers",
+                                data: [...mapp.values()],
+                                backgroundColor: [
+                                    '#0d47a1'
+                                ],
+                                hoverOffset: 4
+                            }
+                        ]
+                    })
+
+                })
             return alldone;
         }
 
@@ -229,6 +281,9 @@ const Dashboard: FC = () => {
                 </section>
                 <section className=' my-40 md:px-20 px-6'>
                     <Barchart chartData={userData} />
+                </section>
+                <section className=' my-40 md:px-20 px-6'>
+                    <Cusinechar catData={catData} />
                 </section>
                 <section className=' my-40'>
                     <Showtable mydata={mydata} />

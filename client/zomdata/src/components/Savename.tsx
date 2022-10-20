@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 interface savename {
     setnamebool: (x: boolean) => any,
@@ -8,11 +9,14 @@ interface savename {
 
 const Savename = ({ setnamebool, wholedatafood }: savename) => {
 
+    const navigate = useNavigate();
+
     const inputRef = useRef<HTMLInputElement>(null);
 
     function handlesubmit() {
         localStorage.setItem(`${(inputRef.current?.value as string).trim()}`, JSON.stringify(wholedatafood));
         setnamebool(false);
+        navigate(`/dashboard/${(inputRef.current?.value as string).trim()}`);
         // setsavename();
     }
 

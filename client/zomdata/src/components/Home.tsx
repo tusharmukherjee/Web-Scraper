@@ -46,7 +46,7 @@ const Home = () => {
                             <h2 className=' text-6xl font-bold mb-9'>2 Steps only</h2>
                             <ul className=' font-light leading-7'>
                                 <li className=' mb-3'>
-                                    Just a single step , paste the zomato's website url of the desired location then click on search button.
+                                    First, paste the zomato's website url of the desired location then click on search button.
                                 </li>
                                 <li>
                                     Now, wait for some time to get data, then save it with a unique name
