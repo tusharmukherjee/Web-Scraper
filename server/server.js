@@ -18,6 +18,10 @@ const corsOption = {
 };
 app.use(cors(corsOption));
 
+app.get("/",(req,res)=>{
+  res.send("<a href='https://tusharmukherjee.github.io/Web-Scraper/'>Go to site</a>");
+})
+
 app.post("/link",async(req,res)=>{
 
     (async () => {
