@@ -24,6 +24,8 @@ app.get("/",(req,res)=>{
 
 app.post("/link",async(req,res)=>{
 
+  let wholeData;
+
     (async () => {
         const browser = await puppeteer.launch({ headless: true });
         const page = await browser.newPage();
@@ -39,7 +41,7 @@ app.post("/link",async(req,res)=>{
 
         await page.waitForTimeout(90000);
       
-        const wholeData = await page.evaluate(() => {
+        wholeData = await page.evaluate(() => {
           return Array.from(
             document.querySelectorAll(
               "div.sc-1mo3ldo-0 > div:nth-child(1) > div > div:nth-child(1) > div:nth-child(1) > a:nth-child(2)"
@@ -74,12 +76,12 @@ app.post("/link",async(req,res)=>{
         });
         
         console.log(wholeData);
-        res.send({
-            wholeData: wholeData
-        });
+        
         await browser.close();
       })();
-
+res.send({
+            wholeData: wholeData
+        });
 })
 
 app.listen(port,()=> {
