@@ -1,20 +1,20 @@
 const express = require('express');
 const app = express();
-const data = require('./data');
+// const data = require('../data');
 const puppeteer = require("puppeteer");
 const cors = require('cors')
 // const parse = require('parse')
 
 const port = 3001;
 
-data.map((el)=> {
-    // el.categories = [];
-    el.categories = el.categories.map((la)=> la.trim());
-});'[['
+// data.map((el)=> {
+//     // el.categories = [];
+//     el.categories = el.categories.map((la)=> la.trim());
+// });'[['
 
 app.use(express.json());
 const corsOption = {
-    origin: ['http://localhost:3000'],
+    origin: ['http://localhost:3000','https://tusharmukherjee.github.io/Web-Scraper/'],
 };
 app.use(cors(corsOption));
 
@@ -68,12 +68,12 @@ app.post("/link",async(req,res)=>{
             };
           });
         });
-        
-        console.log(wholeData);
+        await browser.close();
+        // console.log(wholeData);
         res.send({
             wholeData: wholeData
         });
-        await browser.close();
+        
       })();
 
 })
