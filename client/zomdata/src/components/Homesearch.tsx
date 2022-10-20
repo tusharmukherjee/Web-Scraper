@@ -24,7 +24,7 @@ const Homesearch = () => {
 
         if (regex.test((inputRef.current?.value as string).trim() as string) && (inputRef.current?.value as string).trim() !== "") {
             settimerbool(true);
-            await fetch("https://quilled-pear-gem.glitch.me/link", {
+            await fetch("https://fooner.vercel.app/link", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
