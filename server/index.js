@@ -73,7 +73,7 @@ app.post("/link",async(req,res)=>{
           });
         });
         
-        // console.log(wholeData);
+        console.log(wholeData);
         res.send({
             wholeData: wholeData
         });
