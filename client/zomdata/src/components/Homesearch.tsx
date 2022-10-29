@@ -10,21 +10,17 @@ const Homesearch = () => {
 
     const inputRef = useRef<HTMLInputElement>(null);
 
-    // const [savename, setsavename] = useState<string>();
-
-    // function namefordata(){
-    //     savename
-    // }
-
     async function handleSubmit() {
 
-        console.log(inputRef.current?.value);
+        // console.log(inputRef.current?.value);
         var regex = /(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
         console.log(regex.test((inputRef.current?.value as string).trim()));
 
         if (regex.test((inputRef.current?.value as string).trim() as string) && (inputRef.current?.value as string).trim() !== "") {
             settimerbool(true);
-            await fetch("https://fooner.vercel.app/link", {
+            // http://localhost:3001/link
+            // https://growmedia.click/fooner/getdata
+            await fetch("https://growmedia.click/fooner/getdata", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -44,7 +40,7 @@ const Homesearch = () => {
                         setwholedatafood(data.wholeData);
                     }
                     // setwholedatafood(data.wholedata);
-                    console.log(data.wholeData);
+                    console.log("Fetched!");
                 })
         }
 

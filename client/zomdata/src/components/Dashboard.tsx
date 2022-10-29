@@ -7,6 +7,7 @@ import Filter from './Filter'
 import Filterbox from './Filterbox'
 import Footer from './Footer'
 import Headdata from './Headdata'
+import Locationchart from './Locationchart'
 import Showtable from './Showtable'
 // import data from './data'
 
@@ -67,6 +68,22 @@ const Dashboard: FC = () => {
 
 
     const [catData, setcatData] = useState<chartData>({
+        labels: ['Chinese', 'Pizza', 'Burger'],
+        datasets: [
+            {
+                label: "Cuisine provided by no. of Food sellers",
+                data: [1, 2, 3],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                hoverOffset: 4
+            }
+        ]
+    })
+
+    const [locData, setlocData] = useState<chartData>({
         labels: ['Chinese', 'Pizza', 'Burger'],
         datasets: [
             {
@@ -211,7 +228,7 @@ const Dashboard: FC = () => {
                                     label: "Number of Orders",
                                     data: reso.map((el: any) => el.numberOfOrders),
                                     backgroundColor: [
-                                        '#2196f3',
+                                        '#3B82F6',
                                     ],
                                     hoverOffset: 4
                                 }
@@ -241,8 +258,8 @@ const Dashboard: FC = () => {
                     }
 
                     mapp = new Map([...mapp.entries()].sort((a, b) => b[1] - a[1]));
-                    console.log(mapp);
-                    console.log(reso)
+                    // console.log(mapp);
+                    // console.log(reso)
                     setcatData({
                         labels: [...mapp.keys()],
                         datasets: [
@@ -250,7 +267,40 @@ const Dashboard: FC = () => {
                                 label: "Cuisine sellers",
                                 data: [...mapp.values()],
                                 backgroundColor: [
-                                    '#0d47a1'
+                                    '#3B82F6'
+                                ],
+                                hoverOffset: 4
+                            }
+                        ]
+                    })
+
+                    let locmap = new Map();
+
+                    reso.map((el: any) => {
+                        if (locmap.has(el.location)) {
+                            locmap.set(el.location, locmap.get(el.location) + 1)
+                        }
+                        else {
+                            locmap.set(el.location, 1)
+                        }
+                    });
+
+                    let mpp = new Map([...locmap].sort((a, b) => b[1] - a[1]));
+                    mpp.forEach((value, key) => {
+                        if (value === 1) {
+                            mpp.delete(key);
+                        }
+                    });
+
+
+                    setlocData({
+                        labels: [...mpp.keys()],
+                        datasets: [
+                            {
+                                label: "Locations",
+                                data: [...mpp.values()],
+                                backgroundColor: [
+                                    '#3B82F6'
                                 ],
                                 hoverOffset: 4
                             }
@@ -279,11 +329,17 @@ const Dashboard: FC = () => {
                 <section className=''>
                     <Headdata analytics={analytics} />
                 </section>
-                <section className=' my-40 md:px-20 px-6'>
+                <section className=' bg-blue-100 rounded-md m-4 md:m-20 my-40 md:px-20 px-6'>
+                    <h2 className=' md:text-2xl rounded-b-md bg-blue-500 text-white p-2 md:p-4 mb-4 md:mb-8 w-fit'>Orders Placed</h2>
                     <Barchart chartData={userData} />
                 </section>
-                <section className=' my-40 md:px-20 px-6'>
+                <section className=' bg-blue-100 rounded-md m-4 md:m-20 my-40 md:px-20 px-6'>
+                    <h2 className=' md:text-2xl rounded-b-md bg-blue-500 text-white p-2 md:p-4 mb-4 md:mb-8 w-fit'>Currently popular cuisines</h2>
                     <Cusinechar catData={catData} />
+                </section>
+                <section className=' bg-blue-100 rounded-md m-4 md:m-20 my-40 md:px-20 px-6'>
+                    <h2 className=' md:text-2xl rounded-b-md bg-blue-500 text-white p-2 md:p-4 mb-4 md:mb-8 w-fit'>Businesses in places</h2>
+                    <Locationchart locData={locData} />
                 </section>
                 <section className=' my-40'>
                     <Showtable mydata={mydata} />

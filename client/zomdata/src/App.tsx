@@ -6,7 +6,7 @@ import Homesearch from './components/Homesearch';
 import Zomnav from './components/Zomnav';
 import Presaved from './components/Presaved';
 import Home from './components/Home';
-import Test from './components/Test';
+import Notfound from './components/Notfound';
 
 function App() {
   return (
@@ -18,8 +18,8 @@ function App() {
           <Route path='/search' element={<><Homesearch /></>} />
           <Route path='/dashboard/:key' element={<Dashboard />} />
           <Route path='/saved' element={<Presaved />} />
-          <Route path='/test' element={<Test />} />
         </Route>
+        <Route path='*' element={<Notfound />} />
       </Routes>
     </HashRouter>
     // </Router>

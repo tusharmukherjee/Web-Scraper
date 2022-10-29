@@ -7,14 +7,9 @@ const cors = require('cors')
 
 const port = 3001;
 
-// data.map((el)=> {
-//     // el.categories = [];
-//     el.categories = el.categories.map((la)=> la.trim());
-// });'[['
-
 app.use(express.json());
 const corsOption = {
-    origin: ['http://localhost:3000','https://tusharmukherjee.github.io/Web-Scraper/'],
+    origin: ['https://tusharmukherjee.github.io/Web-Scraper/'],
 };
 app.use(cors(corsOption));
 
@@ -25,7 +20,7 @@ app.get("/",(req,res)=>{
 app.post("/link",async(req,res)=>{
 
     (async () => {
-        const browser = await puppeteer.launch({ headless: true });
+        const browser = await puppeteer.launch({ headless: false });
         const page = await browser.newPage();
         await page.setUserAgent(
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36"
@@ -51,6 +46,29 @@ app.post("/link",async(req,res)=>{
             const ventureName = newarr[0];
             const rating = newarr[1];
             const categories = newarr[2].split(",");
+
+            let twoo;
+
+            if(link.split('/')[4] != 'order'){
+              twoo = link.split('/')[4];    
+            }
+            else{
+              twoo = link.split('/')[3];
+            }
+    
+            let getrepl = ventureName.toLowerCase().replaceAll(' ','-');
+            let remex = getrepl.replaceAll("'","");
+
+            let templocation = twoo.replace(remex+'-','');
+            let location = twoo.replace(remex+'-','');
+
+            let myarr = templocation.split('-');
+            
+            if(!isNaN(templocation.split('-')[0])){
+              myarr.splice(0,1);
+              location = myarr.join('-');
+          }
+
             let numberOfOrders;
             if (
               newarr[newarr.length - 1].search(
@@ -68,12 +86,11 @@ app.post("/link",async(req,res)=>{
               rating,
               categories,
               numberOfOrders,
-              link
+              link,
+              location
             };
           });
         });
-        
-        console.log(wholeData);
         res.send({
             wholeData: wholeData
         });
